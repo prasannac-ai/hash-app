@@ -4,7 +4,7 @@ This project is part of a workshop and is built using the following technologies
 
 	•	Java 17
 	•	Apache Maven
-	•	Hradle
+	•	Gradle
 	•	Jenkins
 	•	Docker
  	•	Ansible
