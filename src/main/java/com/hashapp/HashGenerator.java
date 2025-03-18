@@ -27,6 +27,6 @@ public class HashGenerator {
 
     public static void main(String[] args) {
         HashGenerator hg = new HashGenerator();
-        System.out.println(hg.computeDigest("Hello World!"));
+        System.out.println("MD5 Hash : " +hg.computeDigest("Hello World!"));
     }
 }
