@@ -1,0 +1,18 @@
+- hosts: local
+  connection: local
+  tasks:
+    - name: Build Java Application
+      command: ls
+      args:
+          chdir: /var/lib/jenkins/workspace/testansible
+
+    - name: Copy JAR to Deployment Directory
+      copy:
+        src: /var/lib/jenkins/workspace/testansible/target//hash-app-1.0.jar
+        dest: /var/lib/jenkins/workspace/testansible/target/devops-demo.jar
+        mode: '0755'
+        remote_src: yes  # Ensures the file is copied from the remote machine
+
+    - name: Run Application in Background
+      shell: "nohup java -jar /var/lib/jenkins/workspace/testansible/target/devops-demo.jar > /var/lib/jenkins/workspace/testansible/target/app.log 2>&1 &"
+
